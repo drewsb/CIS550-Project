@@ -7,21 +7,26 @@ import decimal
 
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1', endpoint_url="http://localhost:8000")
 
-table = dynamodb.Table('Movies')
+table = dynamodb.Table('US_Hospitals')
 
-with open("moviedata.json") as json_file:
-    movies = json.load(json_file, parse_float = decimal.Decimal)
-    for movie in movies:
-        year = int(movie['year'])
-        title = movie['title']
-        info = movie['info']
+with open("file-path here ********") as json_file:
+    hospitals = json.load(json_file, parse_float = decimal.Decimal)
+    for hospital in hospitals:
+    	#******* TODO include a variable denoting the row number in the excel file, this will be our PRIMARY KEY
+    	name = hospital['NAME']
+    	address = hospital['ADDRESS']
+    	city = hospital['CITY']
+    	state = hospital['STATE']
+    	zipCode = hospital['ZIP']
 
-        print("Adding movie:", year, title)
+        print("Adding hospital:", name, address, city, state, zipCode)
 
         table.put_item(
            Item={
-               'year': year,
-               'title': title,
-               'info': info,
+               'name': name,
+               'address': address,
+               'city': city,
+               'state': state,
+               'zipCode': zipCode
             }
         )
