@@ -1,0 +1,1 @@
+#script to take in local instance of data and populate AWS DynamoDB table
