@@ -1,0 +1,19 @@
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /actor once
+// the user hits Submit
+block navbarcontent
+    +nav_item("/") Sample Work
+    +nav_item("/", "active") Your Work
+    +nav_item("/reference") Reference
+block content
+  .container
+  p
+    h5 Show Family.
+  form(method="get", action="/members")
+    p
+      select(name = "name")
+        - for (var inx = 0; inx < results.length; inx++)
+          option #{results[inx].login}
+    form(method='get', action='/members')
+      input(type='submit', value='Show Family')
