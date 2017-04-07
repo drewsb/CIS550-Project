@@ -28,6 +28,10 @@ for row in csv_f:
 		print("We have found a duplicate: " + str(row[0]))
 	else:
 		primKey.add(row[0])
+	# Check that no cities or towns are listed with a negative population
+	if cntr > 1 and int(row[4]) < 1:
+		print("Negative population for city: " + str(row[3]) + " at FID: " + row[0])
+
 # Print out the duplicate Cities and Towns
 for k, v in cityDuplicates.items():
 	if len(v) > 1:

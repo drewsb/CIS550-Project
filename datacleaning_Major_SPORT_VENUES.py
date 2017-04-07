@@ -1,4 +1,4 @@
-# script to take in a csv file and clean the data
+# Script to take in a csv file and clean the data
 
 import csv
 
