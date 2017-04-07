@@ -17,7 +17,7 @@ for row in worksheet.col(1):
 
 print("done checking duplicate hostpial names")
 
-# Check that all primary keys in the data (FID) are indeed unique
+# Check that all primary keys in the data (ID) are indeed unique
 primaryKey = set()
 for row in worksheet.col(0):
 	if row in primaryKey:
