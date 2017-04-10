@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<head>
+  <title>RDS Admin Panel</title>
+</head>
+  <!-- Below based off info from bootstrap docs and w3schools tutorials -->
+<body style="background-color: #F8F8F8">
+
+
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Mapper</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="inactive"><a href="/">Login</a></li>
+      <li class="inactive"><a href="/index">Map</a></li>
+      <li class="active"><a href="/admin">RDS Admin</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="row" style="text-align: center; margin-bottom: 50px">
+      <h2> Database Usage Statistics and Admin Panel </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Last Query:</h3>
+        <div id="last_well" class="well">SELECT * FROM Cities GROUP BY zipcode</div>
+      </div>
+      <div class="col-md-6">
+        <h3>Most Common Query:</h3>
+        <div id="most_well" class="well">SELECT COUNT(*) FROM Hospitals GROUP BY state</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Database Usage Stats:</h3>
+        <div id="use_well" class="well">Using AWS RDS instance type: db.m3.medium - Usage 1.87gb</div>
+      </div>
+      <div class="col-md-6">
+        <h3>Daily Query Stats:</h3>
+        <div id="daily_well" class="well">Queries since 12am EST 10/04/2017: 148</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4" style="margin: 0 auto">
+        <button type="button" onclick="rst()" class="btn btn-danger" style="width: 100%; margin-top: 30px">Reset Stats</button>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+
+<!-- RESET SCRIPT -->
+<script type="text/javascript">
+  function rst() {
+    // get id for all 4 wells  
+    document.getElementById('last_well').innerHTML = "NULL";
+    document.getElementById('most_well').innerHTML = "NULL";
+    document.getElementById('use_well').innerHTML = "Using AWS RDS instance type: db.m3.medium - Usage 0.00gb";
+    document.getElementById('daily_well').innerHTML = "Queries since 12am EST 10/04/2017: 000";
+
+  }
+</script>
+
+</body>
+</html>
