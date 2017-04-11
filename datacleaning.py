@@ -1,4 +1,4 @@
-# script to take in a csv file and check that there are no duplicate entries
+	# Script to take in a csv file and check that there are no duplicate entries
 
 import csv
 
