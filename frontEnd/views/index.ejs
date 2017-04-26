@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src='/javascripts/raphael.js'></script>
+<script type="text/javascript" src='javascripts/jquery.usmap.js'></script>
+<script type="text/javascript" src='/javascripts/map.js'></script>
+<style type="text/css">
+  
+  th {
+    border: 1px solid black;
+    height: 50px;
+  }
+  td {
+    border: 1px solid black;
+  }
+  tr {
+    border: 1px solid black;
+  }
+  table {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table_holder {
+    margin: 0 auto;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+  }
+
+</style>
+<head>
+  <title>Map View</title>
+</head>
+<!-- Below based off info from bootstrap docs, twitter api docs, and w3schools panel tutorials, passport-twitter docs -->
+<body style="background-color: #F8F8F8">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Mapper</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="inactive"><a href="/">Login</a></li>
+      <li class="active"><a href="/index">Map</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div id="jumbotop" class="jumbotron jumbotron-fluid">
+      <div class="row"">
+        <div class="col-md-3">
+          <a id="twitter" class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/StateDept">Tweets Liked by @StateDept</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="col-md-9">
+          <div id="us_map" style="width: 600px;height: 400px; margin: 0 auto"></div>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <p id="state_text">State Selected: N/A</p>
+      </div>
+        <div style="width: 50%; margin-top: 50px; margin: 0 auto" class="form-group">
+          <select id="queryselect" class="selectpicker" data-width="100%" title="Choose a query to execute..." >
+            <optgroup label="Sports">
+              <option value="1">Number of sports venues per city</option>
+              <option value="2">Number of sports venues in state</option>
+            </optgroup>
+            <optgroup label="Healthcare">
+              <option value="3">Number of hospitals per city</option>
+              <option value="4">Number of hospitals in state</option>
+              <option value="8">Universities in state with corresponding hospitals</option>
+              <option value="10">Percent of adults who are obsese in state</option>
+              <option value="11">Other states with similar rates of obesity</option>
+            </optgroup>
+            <optgroup label="Demographics">
+              <option value="5">Number of cities in state</option>
+              <option value="6">Population of state in 2016</option>
+              <option value="7">Change in population of state in last three years (2013-2016)</option>
+              <option value="12">Population and educational institutions by city in state</option>
+              <option value="9">Universities in the sportiest city in the state</option>
+              <option value="13">Number of universities in state</option>
+              <option value="14">Comphrensive information about five largest cities in state</option>
+            </optgroup>
+          </select>
+        </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="jumbotron">
+          <h2> Query Output </h2>
+          <div class="table_holder" id="query1table">
+          </div>
+          <div class="table_holder" id="query2table" >
+          </div>
+          <div class="table_holder" id="query3table" >
+          </div>
+          <div class="table_holder" id="query4table" >
+          </div>
+          <div class="table_holder" id="query5table" >
+          </div>
+          <div class="table_holder" id="query6table" >
+          </div>
+          <div class="table_holder" id="query7table" >
+          </div>
+          <div class="table_holder" id="query8table" >
+          </div>
+          <div class="table_holder" id="query9table" >
+          </div>
+          <div  class="table_holder" id="query10table" >
+          </div>
+          <div class="table_holder" id="query11table" >
+          </div>
+          <div class="table_holder" id="query12table" >
+          </div>
+          <div class="table_holder" id="query13table" >
+          </div>
+          <div class="table_holder" id="query14table" >
+          </div>
+        </div>
+      </div>
+
+    </div>
+</body>
+
+</html>
