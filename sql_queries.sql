@@ -48,9 +48,9 @@ Select DISTINCT U.city, U.name, VC.num as NumVenues
 FROM Universities U
 JOIN VenueCount VC
 ON U.city = VC.name
-WHERE U.state = "PA" AND VC.num = (
+WHERE U.state = 'x' AND VC.num = (
 		Select max(V.num)
-		From ( Select * From VenueCount Where state = "PA") as V
+		From ( Select * From VenueCount Where state = 'x') as V
 );
 
 # Select obesity from state = x
